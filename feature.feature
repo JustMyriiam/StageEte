@@ -53,45 +53,59 @@ Scénario: Stocker les numéros de commandes
     Quand le numéro de commande est deja saisi dans le champ numéro de commande
     Alors Le préfixe s'il est présent doit etre concaténer avec le numéro saisi pour avoir le nouveau numéro résultant de concaténation
     Et le numéro de commande résultant sera stocké dans la base de données tel qu'il est       
-    Et le numéro de commande résultant doit étre unique
+    Et le numéro de commande résultant doit être unique
 
 # 7ème scenario
 Scénario: Afficher toutes les catégories du véhicule 
-    Étant donné que l'utilisateur a sélectionné la <marque>
+    Étant donné que l'utilisateur a sélectionné la <societe>, le <contrat> et le <marque>
     Quand l'utilisateur clique sur le champ "Catégorie"
-    Alors l'utilisateur devrait voir une <liste marques> de toutes les catégories appartenant à la marque sélectionnée.
+    Alors l'utilisateur devrait voir une <listeCategories>. 
     Exemples:
-    | marque | liste marques |
-    |        |               |
+    |  societe | contrat | marque | listeCategories 
+    |          |         |        |
     
 
 # 8ème scenario
-Scénario: Vérifier les étapes d'aménagement ajoutées par l'utilisateur
-    Étant donné que l'utilisateur peut ajouter des aménagements dans la section "Vérifier les aménagements" si celles-ci ne sont pas cochées par défaut.
-    Quand l'utilisateur ajoute l'equipement "Installation EGP" et/ou "Transformation / Carrossier", et/ou "Installation PDV"
-    Alors ces étapes doivent apparaître automatiquement dans les détails de la commande
-    Et ces étapes ajoutées ne doivent en aucun cas modifier le contrat standard associé à la commande
+Scénario: Ajouter les étapes d'aménagement
+    Étant donné que l'utilisateur a sélectionné une <societe>, un <contrat> et un <modele>.
+    Quand l'utilisateur ajoute <equipement> 
+    Alors la page "Aménagements" sera accessible
+    Et l'attribut <installationAmenagementParDefaut> du contrat reste égal à False 
+    Exemples:
+       | societe | contrat | modele   | equipement                   |
+       | Veolia  |         |          | "Transformation/Carrossier"  |
+
+
+Scénario: Ajouter les étapes d'aménagement
+    Étant donné que l'utilisateur a coché "Transformation/Carrossier"
+    Quand l'utilisateur clique sur <amenageur>
+    Alors la <listeAmenagements> est affichée
+    Exemples:
+       |        listeAmenagements        |
+       |                                 |
+
+    Et ces étapes doivent apparaître dans les détails de la <commande>
 
 
 # 9ème scénario
-Scénario: Afficher les équipements
-    Étant donné que l'utilisateur a sélectionné un <contrat> et un <modele>
+Plan du Scénario: Afficher les équipements
+    Étant donné que l'utilisateur a sélectionné une <societe>, un <contrat> et un <modele>
     Quand l'utilisateur est sur la page des "Equipements"
-    Alors la liste des équipements correspondant au modèle et au contrat est affichée
+    Alors la liste des <equipements> concernés est affichée
     Exemples:
-                contrat	    | modele	 | équipement
-                ContratA	| Modele1	 | Équipement1, Équipement2
-                ContratA	| Modele2	 | Équipement3, Équipement4        
+            societe |    contrat        |   modele	                                                 | equipements
+             SNCF   | CT106971 LLD      |      Berlingo VAN Taille M 650kg 1,5L BlueHDi 100 BVM       |
+             SUEZ   |                   |            |
 
 # 11ème scénario
-Scénario: ajouter des options
-    Etant donné le prix dans le champ "Prix Options" est égal à 0
-    Quand l'utilisateur ajoute une <option> avec <tarif> 
-    Alors le prix dans le champ "Prix Options" se met à jour
+Plan du Scénario: ajouter des options
+    Etant donné le prix dans le champ "Prix Options" est égal à <prixOptions>
+    Quand l'utilisateur ajoute une <option> avec <tarif> en dollars
+    Alors le <prix Options> dans le champ "Prix Options" se met à jour
     Exemples:
-        | option                 | tarif |
-        | Habillage Intérieur    |       |
-        | Peinture Blanche       |       |
+        PrixOptions | Option                 |  Tarif |   |
+                    |  Habillage Intérieur    |  200   | 
+        | Peinture Blanche       |  300   |
         
 
 

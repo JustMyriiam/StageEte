@@ -57,31 +57,41 @@ Scénario: Stocker les numéros de commandes
 
 # 7ème scenario
 Scénario: Afficher toutes les catégories du véhicule 
-    Étant donné que l'utilisateur a sélectionné la marque
+    Étant donné que l'utilisateur a sélectionné la <marque>
     Quand l'utilisateur clique sur le champ "Catégorie"
     Alors l'utilisateur devrait voir une liste de toutes les catégories appartenant à la marque sélectionnée.
 
+Scénario: Ajouter une catégorie
+    Etant donné que l'utilisateur a sélectionné 
 
 # 8ème scenario
 Scénario: Vérifier les étapes d'aménagement ajoutées par l'utilisateur
     Étant donné que l'utilisateur peut ajouter des aménagements dans la section "Vérifier les aménagements" si celles-ci ne sont pas cochées par défaut.
-    Quand l'utilisateur ajoute "Installation EGP" et/ou "Transformation / Carrossier", et/ou "Installation PDV"
+    Quand l'utilisateur ajoute <type equipement "Installation EGP" et/ou "Transformation / Carrossier", et/ou "Installation PDV"
     Alors ces étapes doivent apparaître automatiquement dans les détails de la commande
     Et ces étapes ajoutées ne doivent en aucun cas modifier le contrat standard associé à la commande
 
 
 # 9ème scénario
 Scénario: Afficher les équipements
-    Étant donné que l'utilisateur sur la page "Equipements"
-    Quand l'utilisateur ajoute des équipements
-    Alors l'utilisateur devrait voir la liste des équipements correspondant au modèle sélectionné et au contrat choisi
-
+    Étant donné que l'utilisateur a sélectionné un <contrat> et un <modele>
+    Quand l'utilisateur est sur la page des "Equipements"
+    Alors la liste des équipements correspondant au modèle et au contrat est affichée
+    Exemples:
+                contrat	    | modele	 | équipement
+                ContratA	| Modele1	 | Équipement1, Équipement2
+                ContratA	| Modele2	 | Équipement3, Équipement4        
 
 # 11ème scénario
-Scénario: Mettre à jour les prix après l'ajout des options
-    Etant donné que l'utilisateur est sur la section options
-    Quand l'utilisateur ajoute des options
-    Alors les prix dans le champ "Prix Options" se mettent à jour automatiquement selon les <tarifs> des options
+Scénario: ajouter des options
+    Etant donné le prix dans le champ "Prix Options" est égal à 0
+    Quand l'utilisateur ajoute une <option> avec <tarif> 
+    Alors le prix dans le champ "Prix Options" se met à jour
+    Exemples:
+        | option                 | tarif |
+        | Habillage Intérieur    |       |
+        | Peinture Blanche       |       |
+        
 
 
 # 12ème scénario

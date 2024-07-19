@@ -59,15 +59,16 @@ Scénario: Stocker les numéros de commandes
 Scénario: Afficher toutes les catégories du véhicule 
     Étant donné que l'utilisateur a sélectionné la <marque>
     Quand l'utilisateur clique sur le champ "Catégorie"
-    Alors l'utilisateur devrait voir une liste de toutes les catégories appartenant à la marque sélectionnée.
-
-Scénario: Ajouter une catégorie
-    Etant donné que l'utilisateur a sélectionné 
+    Alors l'utilisateur devrait voir une <liste marques> de toutes les catégories appartenant à la marque sélectionnée.
+    Exemples:
+    | marque | liste marques |
+    |        |               |
+    
 
 # 8ème scenario
 Scénario: Vérifier les étapes d'aménagement ajoutées par l'utilisateur
     Étant donné que l'utilisateur peut ajouter des aménagements dans la section "Vérifier les aménagements" si celles-ci ne sont pas cochées par défaut.
-    Quand l'utilisateur ajoute <type equipement "Installation EGP" et/ou "Transformation / Carrossier", et/ou "Installation PDV"
+    Quand l'utilisateur ajoute l'equipement "Installation EGP" et/ou "Transformation / Carrossier", et/ou "Installation PDV"
     Alors ces étapes doivent apparaître automatiquement dans les détails de la commande
     Et ces étapes ajoutées ne doivent en aucun cas modifier le contrat standard associé à la commande
 

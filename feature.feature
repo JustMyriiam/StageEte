@@ -69,7 +69,7 @@ Scénario: Stocker les numéros de commandes
     Quand le numéro de commande est deja saisi dans le champ numéro de commande
     Alors Le préfixe s'il est présent doit etre concaténer avec le numéro saisi pour avoir le nouveau numéro résultant de concaténation
     Et le numéro de commande résultant sera stocké dans la base de données tel qu'il est       
-    Et le numéro de commande résultant doit étre unique
+    Et le numéro de commande résultant doit être unique
 
 # 7ème scenario
 Scénario: Afficher toutes les catégories du véhicule 

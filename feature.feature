@@ -73,23 +73,16 @@ Scénario: Stocker les numéros de commandes
 
 # 7ème scenario
 Scénario: Afficher toutes les catégories du véhicule 
-    Étant donné que l'utilisateur a sélectionné la <societe>, le <contrat> et le <marque>
-    Quand l'utilisateur clique sur le champ "Catégorie"
-    Alors l'utilisateur devrait voir une <listeCategories>. 
-    Exemples:
-    |  societe | contrat | marque | listeCategories 
-    |          |         |        |
-    
+    Étant donné que l'utilisateur a sélectionné la société "Veolia", le contrat "VEDAG20210042" et la marque "C- Citroën",
+    Quand l'utilisateur clique sur le champ "Catégorie",
+    Alors l'utilisateur devrait voir une liste de catégories comprenant "C4 Spacetourer, C3, Grand C4 Spacetourer, C3 Aircross, Berlingo, C5 Aircross, Spacetourer"
 
 # 8ème scenario
 Scénario: Ajouter les étapes d'aménagement
-    Étant donné que l'utilisateur a sélectionné une <societe>, un <contrat> et un <modele>.
-    Quand l'utilisateur ajoute <equipement> 
+    Étant donné que l'utilisateur a sélectionné une "<societe>", un "<contrat>" et un "<modele>".
+    Quand l'utilisateur ajoute "Transformation/Carrossier" 
     Alors la page "Aménagements" sera accessible
-    Et l'attribut <installationAmenagementParDefaut> du contrat reste égal à False 
-    Exemples:
-       | societe | contrat | modele   | equipement                   |
-       | Veolia  |         |          | "Transformation/Carrossier"  |
+    Et l'attribut "installationAmenagementParDefaut" du contrat reste égal à False 
 
 
 Scénario: Ajouter les étapes d'aménagement
@@ -97,30 +90,24 @@ Scénario: Ajouter les étapes d'aménagement
     Quand l'utilisateur clique sur <amenageur>
     Alors la <listeAmenagements> est affichée
     Exemples:
-       |        listeAmenagements        |
-       |                                 |
-
-    Et ces étapes doivent apparaître dans les détails de la <commande>
+       |   Amenageur    |   ListeAmenagements  |
+       |                |                      |
 
 
 # 9ème scénario
 Plan du Scénario: Afficher les équipements
-    Étant donné que l'utilisateur a sélectionné une <Societe>, un <Contrat> et un <Modele>
-    Quand l'utilisateur est sur la page des "Equipements"
-    Alors la liste des <Equipements> concernés est affichée
-    Exemples:
-        |  Societe |  Contrat        |  Modele	                                          | Equipements                                                                                                                                                                       |
-        |  SNCF    |  CT106971 LLD   |  Berlingo VAN Taille M 650kg 1,5L BlueHDi 100 BVM  | Airbags Latéraux conducteur et passager, Habillage intérieur, Pack Rétrovision Camera de recul, Roue de secours, Radio Numérique tablette 8", Plancher Bois (GB33), Pack chantier |
-
+    Étant donné que l'utilisateur a sélectionné la société "SNCF", le contrat "CT106971 LLD" et le modèle "Berlingo VAN Taille M 650kg 1,5L BlueHDi 100 BVM",
+    Quand l'utilisateur est sur la page des "Equipements",
+    Alors la liste des équipements concernés est affichée, comprenant "Airbags Latéraux conducteur et passager, Habillage intérieur, Pack Rétrovision Camera de recul, Roue de secours, Radio Numérique tablette 8, Plancher Bois (GB33), Pack chantier"
 
 # 11ème scénario
 Plan du Scénario: ajouter des options
-    Etant donné le prix dans le champ "Prix Options" est égal à <PrixOptionsInitial>
+    Etant donné le prix dans le champ "Prix Options" est égal à "750"
     Quand l'utilisateur ajoute une <Option> avec <Tarif> en dollars
-    Alors le <PrixOptionsFinal> dans le champ "Prix Options" se met à jour
+    Alors le prix dans le champ "Prix Options" se met à jour à "2400"
     Exemples:
-            | Option               |  Tarif     |   PrixOptionsInitial  |   PrixOptionsFinal  |
-            | Pack infotainment    |  1100.00   |                       |                     |
+            | Option               |  Tarif     |  
+            | Pack infotainment    |  1100.00   |
             | Peinture métalisée   |  550.00    |
         
 

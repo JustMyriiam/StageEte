@@ -105,23 +105,23 @@ Scénario: Ajouter les étapes d'aménagement
 
 # 9ème scénario
 Plan du Scénario: Afficher les équipements
-    Étant donné que l'utilisateur a sélectionné une <societe>, un <contrat> et un <modele>
+    Étant donné que l'utilisateur a sélectionné une <Societe>, un <Contrat> et un <Modele>
     Quand l'utilisateur est sur la page des "Equipements"
-    Alors la liste des <equipements> concernés est affichée
+    Alors la liste des <Equipements> concernés est affichée
     Exemples:
-            societe |    contrat        |   modele	                                                 | equipements
-             SNCF   | CT106971 LLD      |      Berlingo VAN Taille M 650kg 1,5L BlueHDi 100 BVM       |
-             SUEZ   |                   |            |
+        |  Societe |  Contrat        |  Modele	                                          | Equipements                                                                                                                                                                       |
+        |  SNCF    |  CT106971 LLD   |  Berlingo VAN Taille M 650kg 1,5L BlueHDi 100 BVM  | Airbags Latéraux conducteur et passager, Habillage intérieur, Pack Rétrovision Camera de recul, Roue de secours, Radio Numérique tablette 8", Plancher Bois (GB33), Pack chantier |
+
 
 # 11ème scénario
 Plan du Scénario: ajouter des options
-    Etant donné le prix dans le champ "Prix Options" est égal à <prixOptions>
-    Quand l'utilisateur ajoute une <option> avec <tarif> en dollars
-    Alors le <prix Options> dans le champ "Prix Options" se met à jour
+    Etant donné le prix dans le champ "Prix Options" est égal à <PrixOptionsInitial>
+    Quand l'utilisateur ajoute une <Option> avec <Tarif> en dollars
+    Alors le <PrixOptionsFinal> dans le champ "Prix Options" se met à jour
     Exemples:
-        PrixOptions | Option                 |  Tarif |   |
-                    |  Habillage Intérieur    |  200   | 
-        | Peinture Blanche       |  300   |
+            | Option               |  Tarif     |   PrixOptionsInitial  |   PrixOptionsFinal  |
+            | Pack infotainment    |  1100.00   |                       |                     |
+            | Peinture métalisée   |  550.00    |
         
 
 

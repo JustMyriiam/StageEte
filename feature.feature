@@ -1,16 +1,32 @@
 Fonctionnalité: Gérer une Commande
 
+# mariem
+Plan du Scénario: Gérer les sociétés
+    Etant donné que la liste contient <taille> sociétés
+    Quand l'utilisateur ajoute une <société> 
+    Alors la société doit étre ajoutée
+    Et la liste doit contenir 4 sociétés
+    Examples:
+                      | société     | 
+                       | SUEZ        |
+                       | SNCF        |
+                       | Veolia      |
+
+
+
 # 1er Scénario
 Plan du Scénario: Afficher toutes les sociétés.
     Étant donné que l'utilisateur est sur la page "Créer une Commande"
-    Quand l'utilisateur clique sur le champ "Entité Juridique"
+    Quand l'utilisateur clique sur le champ <Sociéte>
     Alors l'utilisateur devrait voir une liste de toutes les sociétés disponibles
     Et la taille de la liste est égale à <taille_liste>
     Et la liste contient "<entreprise1>", "<entreprise2>" et "<entreprise3>"
 
     Exemples:
-        | taille_liste | entreprise1 | entreprise2 | entreprise3 |
-        | 3            | SUEZ        | SNCF        | veolia      |
+        | taille_liste | société     | 
+        | 3            | SUEZ        |
+                       | SNCF        |
+                       | Veolia      |
 
 
 # Deuxième Scénario
@@ -57,31 +73,56 @@ Scénario: Stocker les numéros de commandes
 
 # 7ème scenario
 Scénario: Afficher toutes les catégories du véhicule 
-    Étant donné que l'utilisateur a sélectionné la marque
+    Étant donné que l'utilisateur a sélectionné la <societe>, le <contrat> et le <marque>
     Quand l'utilisateur clique sur le champ "Catégorie"
-    Alors l'utilisateur devrait voir une liste de toutes les catégories appartenant à la marque sélectionnée.
-
+    Alors l'utilisateur devrait voir une <listeCategories>. 
+    Exemples:
+    |  societe | contrat | marque | listeCategories 
+    |          |         |        |
+    
 
 # 8ème scenario
-Scénario: Vérifier les étapes d'aménagement ajoutées par l'utilisateur
-    Étant donné que l'utilisateur peut ajouter des aménagements dans la section "Vérifier les aménagements" si celles-ci ne sont pas cochées par défaut.
-    Quand l'utilisateur ajoute "Installation EGP" et/ou "Transformation / Carrossier", et/ou "Installation PDV"
-    Alors ces étapes doivent apparaître automatiquement dans les détails de la commande
-    Et ces étapes ajoutées ne doivent en aucun cas modifier le contrat standard associé à la commande
+Scénario: Ajouter les étapes d'aménagement
+    Étant donné que l'utilisateur a sélectionné une <societe>, un <contrat> et un <modele>.
+    Quand l'utilisateur ajoute <equipement> 
+    Alors la page "Aménagements" sera accessible
+    Et l'attribut <installationAmenagementParDefaut> du contrat reste égal à False 
+    Exemples:
+       | societe | contrat | modele   | equipement                   |
+       | Veolia  |         |          | "Transformation/Carrossier"  |
+
+
+Scénario: Ajouter les étapes d'aménagement
+    Étant donné que l'utilisateur a coché "Transformation/Carrossier"
+    Quand l'utilisateur clique sur <amenageur>
+    Alors la <listeAmenagements> est affichée
+    Exemples:
+       |        listeAmenagements        |
+       |                                 |
+
+    Et ces étapes doivent apparaître dans les détails de la <commande>
 
 
 # 9ème scénario
-Scénario: Afficher les équipements
-    Étant donné que l'utilisateur sur la page "Equipements"
-    Quand l'utilisateur ajoute des équipements
-    Alors l'utilisateur devrait voir la liste des équipements correspondant au modèle sélectionné et au contrat choisi
-
+Plan du Scénario: Afficher les équipements
+    Étant donné que l'utilisateur a sélectionné une <societe>, un <contrat> et un <modele>
+    Quand l'utilisateur est sur la page des "Equipements"
+    Alors la liste des <equipements> concernés est affichée
+    Exemples:
+            societe |    contrat        |   modele	                                                 | equipements
+             SNCF   | CT106971 LLD      |      Berlingo VAN Taille M 650kg 1,5L BlueHDi 100 BVM       |
+             SUEZ   |                   |            |
 
 # 11ème scénario
-Scénario: Mettre à jour les prix après l'ajout des options
-    Etant donné que l'utilisateur est sur la section options
-    Quand l'utilisateur ajoute des options
-    Alors les prix dans le champ "Prix Options" se mettent à jour automatiquement selon les <tarifs> des options
+Plan du Scénario: ajouter des options
+    Etant donné le prix dans le champ "Prix Options" est égal à <prixOptions>
+    Quand l'utilisateur ajoute une <option> avec <tarif> en dollars
+    Alors le <prix Options> dans le champ "Prix Options" se met à jour
+    Exemples:
+        PrixOptions | Option                 |  Tarif |   |
+                    |  Habillage Intérieur    |  200   | 
+        | Peinture Blanche       |  300   |
+        
 
 
 # 12ème scénario

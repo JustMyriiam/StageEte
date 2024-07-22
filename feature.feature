@@ -71,6 +71,8 @@ Scénario: Stocker les numéros de commandes
     Et le numéro de commande résultant sera stocké dans la base de données tel qu'il est       
     Et le numéro de commande résultant doit être unique
 
+#****************************************************************************************
+# Partie de Mariem Sghaier
 # 7ème scenario
 Scénario: Afficher toutes les catégories du véhicule 
     Étant donné que l'utilisateur a sélectionné la société "Veolia", le contrat "VEDAG20210042" et la marque "C- Citroën",
@@ -110,7 +112,7 @@ Plan du Scénario: ajouter des options
             | Pack infotainment    |  1100.00   |
             | Peinture métalisée   |  550.00    |
         
-
+# ***************************************************************************************
 
 # 12ème scénario
 Scénario: Vérifier le prix HT

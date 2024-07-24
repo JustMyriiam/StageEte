@@ -77,7 +77,8 @@ Scénario: Stocker les numéros de commandes
 Scénario: Afficher toutes les catégories du véhicule 
     Étant donné que l'utilisateur a sélectionné la société "Veolia", le contrat "VEDAG20210042" et la marque "C- Citroën",
     Quand l'utilisateur clique sur le champ "Catégorie",
-    Alors l'utilisateur devrait voir une liste de catégories comprenant "C4 Spacetourer, C3, Grand C4 Spacetourer, C3 Aircross, Berlingo, C5 Aircross, Spacetourer"
+    Alors l'utilisateur devrait voir une liste de catégories comprenant "C4 Spacetourer, C3, Grand C4 Spacetourer, C3 Aircross,
+     Berlingo, C5 Aircross, Spacetourer"
 
 # 8ème scenario
 Scénario: Ajouter les étapes d'aménagement
@@ -87,7 +88,7 @@ Scénario: Ajouter les étapes d'aménagement
     Et l'attribut "installationAmenagementParDefaut" du contrat reste égal à False 
 
 
-Scénario: Ajouter les étapes d'aménagement
+Scénario: Afficher les aménagements
     Étant donné que l'utilisateur a coché "Transformation/Carrossier"
     Quand l'utilisateur clique sur <amenageur>
     Alors la <listeAmenagements> est affichée
@@ -98,9 +99,12 @@ Scénario: Ajouter les étapes d'aménagement
 
 # 9ème scénario
 Plan du Scénario: Afficher les équipements
-    Étant donné que l'utilisateur a sélectionné la société "SNCF", le contrat "CT106971 LLD" et le modèle "Berlingo VAN Taille M 650kg 1,5L BlueHDi 100 BVM",
+    Étant donné que l'utilisateur a sélectionné la société "SNCF", le contrat "CT106971 LLD" et le modèle 
+    "Berlingo VAN Taille M 650kg 1,5L BlueHDi 100 BVM",
     Quand l'utilisateur est sur la page des "Equipements",
-    Alors la liste des équipements concernés est affichée, comprenant "Airbags Latéraux conducteur et passager, Habillage intérieur, Pack Rétrovision Camera de recul, Roue de secours, Radio Numérique tablette 8, Plancher Bois (GB33), Pack chantier"
+    Alors la liste des équipements concernés est affichée, comprenant "Airbags Latéraux conducteur et passager, 
+    Habillage intérieur, Pack Rétrovision Camera de recul, Roue de secours, Radio Numérique tablette 8,
+    Plancher Bois (GB33), Pack chantier"
 
 # 11ème scénario
 Plan du Scénario: ajouter des options
